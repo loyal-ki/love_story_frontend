@@ -1,0 +1,101 @@
+name: love_story_frontend
+description: A new Flutter project.
+publish_to: 'none'
+
+# [VERSION]
+version: 1.0.0+1
+
+# [ENVIRONMENT]
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+# [DEPENDENCIES]
+dependencies:
+  cupertino_icons: ^1.0.2
+  device_preview: ^0.1.4-beta
+  flutter:
+    sdk: flutter
+  flutter_flavorizr: ^2.1.5
+  flutter_gen: ^5.1.0+1
+  flutter_hooks: ^0.18.5+1
+  hooks_riverpod: ^2.1.3
+  logger: ^1.1.0
+
+# [DEV-DEPENDENCIES]
+dev_dependencies:
+  build_runner:
+  flutter_gen_runner:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+# [FLUTTER-GEN]
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
+    lottie: true
+
+  colors:
+    inputs:
+      - assets/colors/base_colors.xml
+      - assets/colors/love_story_colors.xml
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/colors/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        # [Regular]
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+
+        # [Light]
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-LightItalic.ttf
+          style: italic
+
+        # [Light]
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/poppins/Poppins-BoldItalic.ttf
+          style: italic
+
+        # [Light]
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 700
+        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.ttf
+          style: italic
+
+
+flavorizr:
+  flavors:
+    development:
+      app:
+        name: "Love Story (DEV +)"
+      android:
+        applicationId: "com.loyalki.lovestory.dev"
+      ios:
+        bundleId: "com.loyalki.lovestory.dev"
+
+    staging:
+      app:
+        name: "Love Story (STG +)"
+      android:
+        applicationId: "com.loyalki.lovestory.stg"
+      ios:
+        bundleId: "com.loyalki.lovestory.stg"
+
+    production:
+      app:
+        name: "Love Story"
+      android:
+        applicationId: "com.loyalki.love_story"
+      ios:
+        bundleId: "com.loyalki.love_story"
